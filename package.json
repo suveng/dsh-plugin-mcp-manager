@@ -1,0 +1,77 @@
+{
+  "name": "dsh-plugin-mcp-manager",
+  "description": "MCP server manager for DeepSeek Harness: OAuth/stdio servers, workspace isolation, and an opt-in on-demand tool broker",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "deepseek",
+    "mcp",
+    "model-context-protocol",
+    "oauth",
+    "stdio",
+    "dsh-plugin",
+    "cordis"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suveng/dsh-plugin-mcp-manager.git"
+  },
+  "homepage": "https://github.com/suveng/dsh-plugin-mcp-manager#readme",
+  "bugs": {
+    "url": "https://github.com/suveng/dsh-plugin-mcp-manager/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "undici": "^7.18.2"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dsh": ">=0.1.2-rc.1 <0.3.0",
+      "dshReleases": {
+        "0.1.2-rc.1": "compatible",
+        "0.1.5-alpha.1": "compatible",
+        "0.1.5-alpha.2": "compatible",
+        "0.1.5-rc.1": "compatible",
+        "0.2.1-rc.5": "compatible",
+        "0.2.2-alpha.2": "compatible"
+      },
+      "node": "^22.19.0 || >=24.0.0",
+      "profiles": [
+        "web"
+      ]
+    }
+  }
+}
