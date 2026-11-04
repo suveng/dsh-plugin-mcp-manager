@@ -3,4 +3,4 @@
 # The user's own cordis.patch.yml may still override or disable this row by id.
 - insert:
     - id: dsh-plugin-mcp-manager
-      name: 'dsh-plugin-mcp-manager'
+      name: 'suveng-dsh-plugin-mcp-manager'
